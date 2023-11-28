@@ -1,8 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { styled } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterActions';
 
-export const Filter = ({ onChange, filter }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
+
+  const handleChange = event => {
+    const newFilter = event.target.value;
+    dispatch(setFilter(newFilter));
+  };
   return (
     <StyledLabel style={{ color: 'black' }}>
       Find contacts by name
@@ -10,16 +18,10 @@ export const Filter = ({ onChange, filter }) => {
         name="filter"
         type="text"
         placeholder="Search by name"
-        filter={filter}
-        onChange={onChange}
+        onChange={handleChange}
       />
     </StyledLabel>
   );
-};
-
-Filter.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  filter: PropTypes.string,
 };
 
 const StyledInput = styled.input`

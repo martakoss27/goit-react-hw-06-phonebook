@@ -28,7 +28,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  //(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
