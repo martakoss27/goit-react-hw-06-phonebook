@@ -9,7 +9,9 @@ contacts from your list by name.
 ## Live page
 
 Check how it works on your own:
-(https://martakoss27.github.io/goit-react-hw-04-phonebook/) Technologies used
+(https://martakoss27.github.io/goit-react-hw-06-phonebook/)
+
+## Technologies used
 
     HTML
     CSS (styled-components)
